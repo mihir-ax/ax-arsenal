@@ -1,7 +1,25 @@
 {
-  "lastUpdated": 1789302230315,
-  "totalCount": 2,
+  "lastUpdated": 1789306700855,
+  "totalCount": 3,
   "solved": [
+    {
+      "addedAt": 1789306700221,
+      "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass solution {\n    public:\n    vector<int> buildPrefixTotals(vector<int>& values, int n) {\n        \n        vector<int> v(n, 0);\n        \n        v[0] = values[0];\n        \n        for (int i = 1; i < n; i++){\n            v[i] = values[i] + v[i - 1];\n        }\n        return v;\n    }\n};",
+      "descriptionHtml": "",
+      "descriptionText": "",
+      "difficulty": "EASY",
+      "endTimeStr": "19:08",
+      "githubPushed": true,
+      "lang": "cpp",
+      "markdownContent": "You are provided with a sequence of integers `values` of length `n`.\n\nConstruct its prefix-total sequence `prefix`, where the entry at index `i` stores the cumulative total of all elements from index `0` through index `i`, inclusive.\n\nThus, `prefix[0] = values[0]`.\n\nFor every `1 ≤ i < n`, `prefix[i] = prefix[i - 1] + values[i]`.\n\nDetermine the resulting prefix sequence.\n\n**Example 1:**\n\n**Input:**\n\n```\nn = 5\nvalues = [3, 1, 7, 0, 4]\n```\n\n**Output:**\n\n```\n3 4 11 11 15\n```\n\n**Explanation:**\n\n- `prefix[0]` is `3`.\n\n- As you move from left to right, the cumulative totals become `4`, `11`, `11`, and `15`.\n\n**Example 2:**\n\n**Input:**\n\n```\nn = 6\nvalues = [-2, 5, -1, 6, -3, 2]\n```\n\n**Output:**\n\n```\n-2 3 2 8 5 7\n```\n\n**Explanation:**\n\n- Each position stores the total of all values up to that index.\n\n- Beginning with `-2`, the next running totals are `3`, `2`, `8`, `5`, and `7`.\n\n**Your Task**\n\n- Complete the provided `buildPrefixTotals` function that takes `values` and `n` and returns the required prefix sequence.\n\n**Constraints**\n\n- `1` ≤ `n` ≤ `10^4`\n\n- `-10^4` ≤ `values[i]` ≤ `10^4`\n\n**Input Format**\n\n- The first line contains an integer `n`, the number of elements in the sequence.\n\n- The second line contains `n` space-separated integers representing `values`.\n\n**Output Format**\n\n- Output consists of `n` space-separated integers on a single line, representing the prefix totals in left-to-right order.",
+      "platform": "ccbp",
+      "questionId": "prefix-sum-array",
+      "startTimeStr": "19:08",
+      "timeSpent": 9,
+      "timestamp": 1789306700210,
+      "title": "Prefix Sum Array",
+      "titleSlug": "prefix-sum-array"
+    },
     {
       "addedAt": 1789302229862,
       "code": "#include<bits/stdc++.h>\nusing namespace std;\n\n/*\nclass Node {\n    public:\n        int data;\n        Node* next;\n    public:\n        Node(int value, Node* address){\n            data = value;\n            next = address;\n        }\n    public:\n        Node(int value){\n            data = value;\n            next = NULL;\n        }\n    public:\n        Node(){\n            data = 0;\n            next = NULL;\n        }\n};\n*/\n\nclass solution {\n  public:\n    Node *addTwoNumbers(Node *head1, Node *head2) {\n\n        if (!head1)\n            return head2;\n        if (!head2)\n            return head1;\n\n        Node *current1 = head1;\n        Node *current2 = head2;\n        Node *fake = new Node(0);\n        Node *fakeCurrent = fake;\n        int carry = 0;\n\n        while (current1 != nullptr && current2 != nullptr) {\n            int data = carry + current1->data + current2->data;\n            carry = 0;\n\n            current1 = current1->next;\n            current2 = current2->next;\n\n            if (data >= 10) {\n                int digit = data % 10;\n                carry = data / 10;\n\n                Node *temp = new Node(digit);\n                fakeCurrent->next = temp;\n                fakeCurrent = temp;\n            } else {\n                Node *temp = new Node(data);\n\n                fakeCurrent->next = temp;\n                fakeCurrent = temp;\n            }\n        }\n\n        if (current1 != nullptr) {\n            while (current1 != nullptr) {\n                int data = current1->data + carry;\n                carry = 0;\n                if (data >= 10) {\n                    int digit = data % 10;\n                    carry = data / 10;\n                    Node *temp = new Node(digit);\n                    fakeCurrent->next = temp;\n                    fakeCurrent = temp;\n                } else {\n                    Node *temp = new Node(data);\n                    fakeCurrent->next = temp;\n                    fakeCurrent = temp;\n                }\n                current1 = current1->next;\n            }\n        }\n\n        if (current2 != nullptr) {\n            while (current2 != nullptr) {\n                int data = current2->data + carry;\n                carry = 0;\n                if (data >= 10) {\n                    int digit = data % 10;\n                    carry = data / 10;\n                    Node *temp = new Node(digit);\n                    fakeCurrent->next = temp;\n                    fakeCurrent = temp;\n                } else {\n                    Node *temp = new Node(data);\n                    fakeCurrent->next = temp;\n                    fakeCurrent = temp;\n                }\n                current2 = current2->next;\n            }\n        }\n\n        if (current1 == nullptr && current2 == nullptr && carry > 0) {\n            Node *temp = new Node(carry);\n            fakeCurrent->next = temp;\n            fakeCurrent = temp;\n        }\n\n        return fake->next;\n    }\n};\n",
