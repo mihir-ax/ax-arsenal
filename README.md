@@ -10,20 +10,20 @@
 
 | 🧠 Total Solved | 🟢 Easy | 🟡 Medium | 🔴 Hard | ⏱️ Total Time Taken |
 | :---: | :---: | :---: | :---: | :---: |
-| **4** | **3** | **1** | **0** | **14m 41s** |
+| **5** | **4** | **1** | **0** | **17m 48s** |
 
 ## 🌐 Platform Breakdown
 
 | Platform | Questions Solved |
 | :--- | :---: |
 | **LeetCode** | 1 |
-| **CCBP** | 3 |
+| **CCBP** | 4 |
 
 ## 💻 Language Proficiency
 
 | Language | Solutions |
 | :--- | :---: |
-| C++ | **4** |
+| C++ | **5** |
 
 ---
 

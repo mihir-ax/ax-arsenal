@@ -1,7 +1,25 @@
 {
-  "lastUpdated": 1789307531952,
-  "totalCount": 4,
+  "lastUpdated": 1789307846932,
+  "totalCount": 5,
   "solved": [
+    {
+      "addedAt": 1789307846453,
+      "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass solution {\npublic:\n    vector<int> scoreboardAfterRounds(int n, vector<int>& arr) {\n        \n        if (arr.size() < 2) return arr;\n        for (int i = 1; i < arr.size(); i++){\n            arr[i] = arr[i-1] + arr[i];\n        }\n        \n        return arr;\n    }\n};",
+      "descriptionHtml": "",
+      "descriptionText": "",
+      "difficulty": "EASY",
+      "endTimeStr": "19:27",
+      "githubPushed": true,
+      "lang": "cpp",
+      "markdownContent": "You are given an integer `n` representing the number of rounds and an array arr of size `n`, where `arr[i]` represents the points gained by the player in the `i`-th round.\n\nAfter each round, the scoreboard displays the player’s total points so far.\n\nReturn an array scoreboard of size `n`, where `scoreboard[i]` is the total points after completing round `i`.\n\n**Example 1**\n\n**Input:**\n\n```\nn = 4\narr = [1, 2, 3, 4]\n```\n\n**Output:**\n\n```\n1 3 6 10\n```\n\n**Explanation:**\n\n* After round 1: total = `1`\n\n* After round 2: total = `1 + 2 = 3`\n\n* After round 3: total = `1 + 2 + 3 = 6`\n\n* After round 4: total = `1 + 2 + 3 + 4 = 10`\n\nSo, the scoreboard values are `1, 3, 6, 10`.\n\n**Example 2**\n\n**Input:**\n\n```\nn = 5\narr = [5, 0, 2, 1, 3]\n```\n\n**Output:**\n\n```\n5 5 7 8 11\n```\n\n**Explanation:**\n\n* After round 1: total = `5`\n\n* After round 2: total = `5 + 0 = 5`\n\n* After round 3: total = `5 + 0 + 2 = 7`\n\n* After round 4: total = `5 + 0 + 2 + 1 = 8`\n\n* After round 5: total = `5 + 0 + 2 + 1 + 3 = 11`\n\nSo, the scoreboard values are `5, 5, 7, 8, 11`.\n\n\n**Your Task**\n\n* Complete the provided `scoreboardAfterRounds` function, which takes `2` parameters: an integer `n` , and the array `arr` of size `n`.\n\n* Return an array where each element represents the total score after each round.\n\n\n**Constraints**\n\n* `1` <= `n` <= `10^3`\n\n* `0` <= `arr[i]` <= `10^3`\n\n\n**Input Format**\n\n* The first line contains an integer `n` representing number of rounds.\n\n* The second line contains `n` integers representing the array `arr`.\n\n\n**Output Format**\n\n* Returns an integer array of size `n`, where the `i`-th element represents the total score after the `i`-th round.",
+      "platform": "ccbp",
+      "questionId": "scoreboard-after-each-round",
+      "startTimeStr": "19:24",
+      "timeSpent": 187,
+      "timestamp": 1789307846430,
+      "title": "Scoreboard After Each Round",
+      "titleSlug": "scoreboard-after-each-round"
+    },
     {
       "addedAt": 1789307530849,
       "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass solution {\npublic:\n    vector<string> generateTitlePrefixes(string title) {\n        vector<string> v;\n        \n        if (title.empty()) return v;\n        \n        v.push_back(string (1, title[0]));\n        \n        for (int i = 1; i < title.size(); i++){\n           v.push_back(v[i-1] + title[i]);\n        }\n        \n        return v;\n        \n    }\n};",
