@@ -1,7 +1,25 @@
 {
-  "lastUpdated": 1789306700855,
-  "totalCount": 3,
+  "lastUpdated": 1789307531952,
+  "totalCount": 4,
   "solved": [
+    {
+      "addedAt": 1789307530849,
+      "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass solution {\npublic:\n    vector<string> generateTitlePrefixes(string title) {\n        vector<string> v;\n        \n        if (title.empty()) return v;\n        \n        v.push_back(string (1, title[0]));\n        \n        for (int i = 1; i < title.size(); i++){\n           v.push_back(v[i-1] + title[i]);\n        }\n        \n        return v;\n        \n    }\n};",
+      "descriptionHtml": "",
+      "descriptionText": "",
+      "difficulty": "EASY",
+      "endTimeStr": "19:22",
+      "githubPushed": true,
+      "lang": "cpp",
+      "markdownContent": "In a bustling library, a librarian is tasked with organizing books by their titles. To simplify the process, the librarian decides to generate all possible prefixes of each book title. A prefix is defined as the starting portion of a string, ranging from the first character up to the entire string. Your task is to help the librarian by writing a program that generates all prefixes of a given book title.\n\n**Example 1:**\n\n**Input:**\n\n```\ntitle = \"b\"\n```\n\n**Output:**\n\n```\nb\n```\n\n**Explanation:**\n\nThe book title is `\"b\"`, which has a length of `1`. Therefore, there is only one prefix:\n\n- Prefix of length `1` → `b`\n\n**Example 2:**\n\n**Input:**\n\n```\ntitle = \"read\"\n```\n\n**Output:**\n\n```\nr\nre\nrea\nread\n```\n\n**Explanation:**\n\nThe book title is `\"read\"`, which has a length of `4`. The prefixes are:\n\n- Prefix of length `1` → `r`\n\n- Prefix of length `2` → `re`\n\n- Prefix of length `3` → `rea`\n\n- Prefix of length `4` → `read`\n\n**Your Task**\n\n- Complete the function `generateTitlePrefixes` that takes a string `title` as input and returns a list of all its prefixes.\n\n**Constraints**\n\n- `1 <= title.length <= 1000`\n\n- `title` consists of lowercase English letters.\n\n**Input Format**\n\n- A single string `title` representing the book title.\n\n**Output Format**\n\nThe output is printed as multiple lines:\n\n- Each line contains one prefix of the string, starting from the shortest prefix (length `1`) to the longest prefix (length equal to the length of the string).",
+      "platform": "ccbp",
+      "questionId": "book-title-prefixes",
+      "startTimeStr": "19:10",
+      "timeSpent": 726,
+      "timestamp": 1789307530840,
+      "title": "Book Title Prefixes",
+      "titleSlug": "book-title-prefixes"
+    },
     {
       "addedAt": 1789306700221,
       "code": "#include <bits/stdc++.h>\nusing namespace std;\n\nclass solution {\n    public:\n    vector<int> buildPrefixTotals(vector<int>& values, int n) {\n        \n        vector<int> v(n, 0);\n        \n        v[0] = values[0];\n        \n        for (int i = 1; i < n; i++){\n            v[i] = values[i] + v[i - 1];\n        }\n        return v;\n    }\n};",
