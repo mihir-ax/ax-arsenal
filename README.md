@@ -10,20 +10,20 @@
 
 | 🧠 Total Solved | 🟢 Easy | 🟡 Medium | 🔴 Hard | ⏱️ Total Time Taken |
 | :---: | :---: | :---: | :---: | :---: |
-| **1** | **1** | **0** | **0** | **1m 44s** |
+| **2** | **1** | **1** | **0** | **2m 26s** |
 
 ## 🌐 Platform Breakdown
 
 | Platform | Questions Solved |
 | :--- | :---: |
 | **LeetCode** | 1 |
-| **CCBP** | 0 |
+| **CCBP** | 1 |
 
 ## 💻 Language Proficiency
 
 | Language | Solutions |
 | :--- | :---: |
-| C++ | **1** |
+| C++ | **2** |
 
 ---
 
@@ -31,6 +31,7 @@
 
 Explore the solutions by navigating into the specific tech stacks:
 
+- [📁 CCBP/C++](./CCBP/C%2B%2B/)
 - [📁 LeetCode C++ DSA](./LeetCode%20C%2B%2B%20DSA/)
 
 ---
