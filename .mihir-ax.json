@@ -1,7 +1,25 @@
 {
-  "lastUpdated": 1789367223019,
-  "totalCount": 8,
+  "lastUpdated": 1789540080883,
+  "totalCount": 9,
   "solved": [
+    {
+      "addedAt": 1789540079747,
+      "code": "#include<bits/stdc++.h>\nusing namespace std;\n\n\nclass solution {\npublic:\n    bool balancedParentheses(string s) {\n        stack <char> stk;\n        for (int i = 0; i < s.length(); i++){\n            if (s[i] == '(' || s[i] == '{' || s[i] == '['){\n                stk.push(s[i]);\n            } else if (stk.empty()){\n                return false;\n            } else {\n                if (s[i] == ')' || s[i] == '}' || s[i] == ']'){\n                    \n                    if ((stk.top() == '(' && s[i] == ')') || (stk.top() == '{' && s[i] == '}') || (stk.top() == '[' && s[i] == ']') ) {\n                        stk.pop();\n                        continue;\n                    } \n                    \n                } else if (stk.empty()){\n                    return true;\n                }\n            }\n        }\n        if (stk.empty()){\n            return true;\n        } else {\n            return false;\n        }\n    }\n};",
+      "descriptionHtml": "",
+      "descriptionText": "",
+      "difficulty": "EASY",
+      "endTimeStr": "11:57",
+      "githubPushed": true,
+      "lang": "cpp",
+      "markdownContent": "Given a string `s` consisting solely of the characters `(`, `)`, `{`, `}`, `[` and `]`, check if the string forms a valid sequence of brackets.\n\nA sequence is considered valid if:\n\n- Every opening bracket has a matching closing bracket of the same type.\n- Brackets are closed in the correct order.\n- Each closing bracket has a corresponding opening bracket of the same type.\n\n\n**Example 1:**\n\n**Input:**\n\n```\ns = “{}()[]”\n```\n**Output:**\n\n```\ntrue\n```\n\n**Explanation:**\n\n- All brackets are correctly matched and nested in the proper order.\n\n\n**Example 2:**\n\n**Input:**\n\n```\ns = “(){[{}])”\n```\n**Output:**\n\n```\nfalse\n```\n**Explanation:**\n\n- The brackets `{` and `)` are not a matching pair.\n\n\n**Your Task**\n\n- Complete the provided function `balancedParenthesis` that takes one argument:\n\n    - `s`: String\n\n**Constraints:**\n \n-  `1` <= `s.length`  <= `1000`\n\n- The string `s` contains only the characters `(`, `)`, `[`, `]`, `{`, and `}`.\n\n\n**Input Format:**\n\n- A single line consists of string `s` consisting of characters `(`, `)`, `{`, `}`, `[` and `]`.\n\n**Output Format:**\n\n- A single line containing `true` if the string has balanced parentheses, otherwise `false`.",
+      "platform": "ccbp",
+      "questionId": "balanced-parenthesis",
+      "startTimeStr": "11:44",
+      "timeSpent": 784,
+      "timestamp": 1789540079741,
+      "title": "Balanced Parenthesis",
+      "titleSlug": "balanced-parenthesis"
+    },
     {
       "addedAt": 1789367222388,
       "code": "/**\n * Definition for singly-linked list.\n * struct ListNode {\n *     int val;\n *     ListNode *next;\n *     ListNode() : val(0), next(nullptr) {}\n *     ListNode(int x) : val(x), next(nullptr) {}\n *     ListNode(int x, ListNode *next) : val(x), next(next) {}\n * };\n */\nclass Solution {\npublic:\n    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) { \n        \n        // if (!l1) return l2;\n        // if (!l2) return l1;\n        // if (!l1 && !l2) return nullptr; \n        \n        ListNode * l1Current = l1;\n        ListNode * l2Current = l2;\n\n        ListNode * sumList = new ListNode(0);\n        ListNode * sumCurrent = sumList;\n\n        int carry = 0;\n\n        while (l1Current || l2Current || carry){\n            int summ = carry;\n            carry = 0;\n\n            if (l1Current){\n                summ += l1Current -> val;\n                l1Current = l1Current -> next;\n            }\n\n            if (l2Current) {\n                summ += l2Current -> val;\n                l2Current = l2Current -> next;\n            }\n\n            if (summ >= 10){\n                carry = summ / 10;\n                summ = summ % 10;\n            }\n\n            ListNode * temp = new ListNode(summ);\n            sumCurrent -> next = temp;\n            sumCurrent = sumCurrent -> next;\n        }\n\n        return sumList -> next;\n    }\n};",
